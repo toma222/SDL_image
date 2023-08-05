@@ -1,7 +1,6 @@
 project "SDL_image"
 	kind "SharedLib"
-	language "C++"
-	cppdialect "C++17"
+	language "C"
 	staticruntime "off"
 
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
@@ -10,7 +9,7 @@ project "SDL_image"
 	files
 	{
 		"src/**.h",
-		"src/**.cpp",
+		"src/**.c",
 	}
 
 	includedirs
