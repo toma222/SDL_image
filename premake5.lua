@@ -1,4 +1,4 @@
-project "SDL_image"
+project "SDLImage"
 	kind "SharedLib"
 	language "C"
 	staticruntime "off"
@@ -8,13 +8,24 @@ project "SDL_image"
 
 	files
 	{
-		"src/**.h",
-		"src/**.c",
+		"src/*.h",
+		"src/*.c"
 	}
 
 	includedirs
 	{
-		"include"
+		"include",
+		"%{wks.location}/gerald/vendor/SDL/include"
+	}
+
+	libdirs
+	{
+		"%{wks.location}/gerald/vendor/SDL/build"
+	}
+
+	links
+	{
+		"SDL3"
 	}
 
 	filter "configurations:Debug"
